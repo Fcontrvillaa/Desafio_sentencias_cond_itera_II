@@ -16,25 +16,19 @@ ventas = {
     "Diciembre": 21000,
 }
 
-# Check if a threshold argument was provided
-if len(sys.argv) < 2:
-    print("Usage: python mayor_a.py <umbral>")
-    sys.exit(1) # Exit the script with an error code
 
-# Get the threshold from the command line arguments
 try:
     umbral = int(sys.argv[1])
 except ValueError:
     print("Error: El umbral debe ser un número entero.")
     sys.exit(1)
 
-# Create an empty dictionary to store months exceeding the threshold
-ventas_superiores_umbral = {}
+mayor_umbral = {}
 
-# Iterate through the sales dictionary
 for mes, valor in ventas.items():
-    if valor > umbral:
-        ventas_superiores_umbral[mes] = valor
+    if valor > umbral: # valor mayor que umbral
+        mayor_umbral[mes] = valor # añade mes y valor al dicc.
 
-# Print the resulting dictionary
-print(ventas_superiores_umbral)
+
+print(mayor_umbral)
+
